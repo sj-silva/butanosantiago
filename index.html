@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
+      name="keywords"
+      content="butano Santiago, propano Santiago, gas CEPSA, entrega gas Compostela, Gas Abegondo, butano galicia, repartidor gas santiago, repartidor butano santiago"
+    />
+
+    <meta
       name="description"
       content="Reparto de gas butano e propano en Santiago de Compostela. Entregas a domicilio rápidas e seguras. Contacta por WhatsApp: +34 650 459 701"
     />
@@ -26,6 +31,10 @@
     />
 
     <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
       :root {
         --primary-red: #e30613;
         --whatsapp-green: #25d366;
@@ -223,28 +232,6 @@
         }
       }
     </style>
-
-    <script>
-      function cambiarIdioma(idioma) {
-        document.getElementById("gl").style.display =
-          idioma === "gl" ? "block" : "none";
-        document.getElementById("es").style.display =
-          idioma === "es" ? "block" : "none";
-
-        // Update active button
-        document.querySelectorAll(".language-btn").forEach((btn) => {
-          btn.classList.remove("active");
-        });
-        document
-          .querySelector(`[onclick="cambiarIdioma('${idioma}')"]`)
-          .classList.add("active");
-      }
-
-      // Initialize on page load
-      document.addEventListener("DOMContentLoaded", function () {
-        cambiarIdioma("gl");
-      });
-    </script>
   </head>
   <body>
     <!-- Navigation -->
@@ -290,7 +277,15 @@
             domicilio en Santiago de Compostela, incluíndo o casco histórico.
             Traballamos con botellas CEPSA e realizamos entregas rápidas,
             seguras e sen complicacións. Pide o teu gas de maneira doada a
-            través de WhatsApp no <strong>+34 650 459 701</strong>.
+            través de WhatsApp no <strong>+34 650 459 701</strong> ou chámanos
+            ao <strong>981 673 208</strong>. Tamén podes comprar directamente
+            pola internet no noso
+            <a
+              href="https://www.gasabegondo.com/"
+              target="_blank"
+              class="fw-bold"
+              >sitio web oficial</a
+            >.
           </p>
           <a
             href="https://wa.me/34650459701"
@@ -311,7 +306,8 @@
                 <div>
                   <h5 class="mb-1">Entrega rápida</h5>
                   <p class="mb-0 text-muted">
-                    Entregas o mesmo día en Santiago
+                    Realizamos entregas de
+                    <strong>luns a venres de 8:30 a 16:30</strong>.
                   </p>
                 </div>
               </div>
@@ -356,7 +352,15 @@
             domicilio en Santiago de Compostela, incluyendo el casco histórico.
             Trabajamos con botellas CEPSA y realizamos entregas rápidas, seguras
             y sin complicaciones. Haz tu pedido fácilmente por WhatsApp al
-            <strong>+34 650 459 701</strong>.
+            <strong>+34 650 459 701</strong> o llámanos al
+            <strong>981 673 208</strong>. También puedes comprar directamente
+            por internet en nuestro
+            <a
+              href="https://www.gasabegondo.com/"
+              target="_blank"
+              class="fw-bold"
+              >sitio web oficial</a
+            >.
           </p>
           <a
             href="https://wa.me/34650459701"
@@ -377,7 +381,8 @@
                 <div>
                   <h5 class="mb-1">Entrega rápida</h5>
                   <p class="mb-0 text-muted">
-                    Entregas el mismo día en Santiago
+                    Realizamos entregas de
+                    <strong>luns a viernes de 8:30 a 16:30</strong>.
                   </p>
                 </div>
               </div>
@@ -440,5 +445,6 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
