@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="gl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Reparto de gas butano e propano en Santiago de Compostela. Entregas a domicilio rápidas e seguras. Contacta por WhatsApp: +34 650 459 701"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://www.gasabegondo.com/img/favicon.ico?1604568087"
+    />
+    <title>Gas Butano Santiago - Gas Abegondo</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --primary-red: #e30613;
+        --whatsapp-green: #25d366;
+        --whatsapp-hover: #1ebe5b;
+      }
+
+      body {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        min-height: 100vh;
+      }
+
+      .navbar {
+        background: linear-gradient(135deg, var(--primary-red), #c5050f);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .logo {
+        max-width: 100%;
+        height: auto;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .hero-section {
+        background: linear-gradient(
+          135deg,
+          rgba(227, 6, 19, 0.05),
+          rgba(227, 6, 19, 0.1)
+        );
+        border-radius: 20px;
+        padding: 3rem 2rem;
+        margin: 2rem 0;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .hero-title {
+        color: var(--primary-red);
+        font-weight: 700;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .hero-subtitle {
+        color: #495057;
+        font-weight: 500;
+        margin-bottom: 2rem;
+      }
+
+      .hero-description {
+        font-size: 1.1rem;
+        color: #6c757d;
+        line-height: 1.7;
+        margin-bottom: 2rem;
+      }
+
+      .whatsapp-button {
+        background: linear-gradient(
+          135deg,
+          var(--whatsapp-green),
+          var(--whatsapp-hover)
+        );
+        border: none;
+        color: white;
+        padding: 15px 30px;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+        transition: all 0.3s ease;
+        font-size: 1.1rem;
+      }
+
+      .whatsapp-button:hover {
+        background: linear-gradient(135deg, var(--whatsapp-hover), #17a04a);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        color: white;
+        text-decoration: none;
+      }
+
+      .whatsapp-floating {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: linear-gradient(
+          135deg,
+          var(--whatsapp-green),
+          var(--whatsapp-hover)
+        );
+        color: white;
+        padding: 15px;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        text-decoration: none;
+        box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        z-index: 1000;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+      }
+
+      .whatsapp-floating:hover {
+        background: linear-gradient(135deg, var(--whatsapp-hover), #17a04a);
+        transform: scale(1.1);
+        color: white;
+        text-decoration: none;
+      }
+
+      .language-btn {
+        background: rgba(255, 255, 255, 0.2);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        color: white;
+        transition: all 0.3s ease;
+      }
+
+      .language-btn:hover {
+        background: rgba(255, 255, 255, 0.3);
+        border-color: rgba(255, 255, 255, 0.5);
+        color: white;
+        transform: translateY(-1px);
+      }
+
+      .language-btn.active {
+        background: rgba(255, 255, 255, 0.9);
+        color: var(--primary-red);
+        border-color: white;
+      }
+
+      .footer {
+        background: linear-gradient(135deg, #343a40, #495057);
+        color: white;
+        padding: 2rem 0;
+        margin-top: 3rem;
+      }
+
+      .footer a {
+        color: #ffc107;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer a:hover {
+        color: #fff;
+      }
+
+      .features {
+        background: white;
+        border-radius: 15px;
+        padding: 2rem;
+        margin: 2rem 0;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 1.5rem;
+        padding: 1rem;
+        background: rgba(227, 6, 19, 0.05);
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+      }
+
+      .feature-item:hover {
+        transform: translateY(-2px);
+      }
+
+      .feature-icon {
+        background: var(--primary-red);
+        color: white;
+        padding: 10px;
+        border-radius: 50%;
+        font-size: 1.2rem;
+      }
+
+      @media (max-width: 768px) {
+        .hero-section {
+          padding: 2rem 1rem;
+        }
+
+        .hero-title {
+          font-size: 1.8rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.1rem;
+        }
+      }
+    </style>
+
+    <script>
+      function cambiarIdioma(idioma) {
+        document.getElementById("gl").style.display =
+          idioma === "gl" ? "block" : "none";
+        document.getElementById("es").style.display =
+          idioma === "es" ? "block" : "none";
+
+        // Update active button
+        document.querySelectorAll(".language-btn").forEach((btn) => {
+          btn.classList.remove("active");
+        });
+        document
+          .querySelector(`[onclick="cambiarIdioma('${idioma}')"]`)
+          .classList.add("active");
+      }
+
+      // Initialize on page load
+      document.addEventListener("DOMContentLoaded", function () {
+        cambiarIdioma("gl");
+      });
+    </script>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center w-100">
+          <span class="navbar-brand text-white fw-bold">Gas Abegondo</span>
+          <div class="language-buttons">
+            <button class="btn language-btn me-2" onclick="cambiarIdioma('gl')">
+              Galego
+            </button>
+            <button class="btn language-btn" onclick="cambiarIdioma('es')">
+              Castellano
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <!-- Logo -->
+      <div class="row justify-content-center mt-4">
+        <div class="col-lg-6 col-md-8 text-center">
+          <img
+            src="gas.png"
+            alt="Gas Abegondo - La energía que acompaña tu vida"
+            class="logo img-fluid"
+          />
+        </div>
+      </div>
+
+      <!-- Galician Content -->
+      <div id="gl" style="display: block">
+        <div class="hero-section text-center">
+          <h1 class="hero-title">
+            Gas butano e propano en Santiago de Compostela
+          </h1>
+          <h2 class="hero-subtitle">
+            Entregas a domicilio con botellas CEPSA — Servizo rápido e seguro
+          </h2>
+          <p class="hero-description">
+            En Gas Abegondo ofrecemos reparto de gas butano e propano a
+            domicilio en Santiago de Compostela, incluíndo o casco histórico.
+            Traballamos con botellas CEPSA e realizamos entregas rápidas,
+            seguras e sen complicacións. Pide o teu gas de maneira doada a
+            través de WhatsApp no <strong>+34 650 459 701</strong>.
+          </p>
+          <a
+            href="https://wa.me/34650459701"
+            class="whatsapp-button"
+            target="_blank"
+          >
+            <i class="bi bi-whatsapp"></i> Pide por WhatsApp
+          </a>
+        </div>
+
+        <div class="features">
+          <div class="row">
+            <div class="col-lg-4 col-md-6">
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="bi bi-truck"></i>
+                </div>
+                <div>
+                  <h5 class="mb-1">Entrega rápida</h5>
+                  <p class="mb-0 text-muted">
+                    Entregas o mesmo día en Santiago
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="bi bi-shield-check"></i>
+                </div>
+                <div>
+                  <h5 class="mb-1">Seguridade</h5>
+                  <p class="mb-0 text-muted">Botellas CEPSA homologadas</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="bi bi-geo-alt"></i>
+                </div>
+                <div>
+                  <h5 class="mb-1">Casco histórico</h5>
+                  <p class="mb-0 text-muted">Chegamos a toda a cidade</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Spanish Content -->
+      <div id="es" style="display: none">
+        <div class="hero-section text-center">
+          <h1 class="hero-title">
+            Gas butano y propano en Santiago de Compostela
+          </h1>
+          <h2 class="hero-subtitle">
+            Entregas a domicilio con botellas CEPSA — Servicio rápido y seguro
+          </h2>
+          <p class="hero-description">
+            En Gas Abegondo ofrecemos reparto de gas butano y propano a
+            domicilio en Santiago de Compostela, incluyendo el casco histórico.
+            Trabajamos con botellas CEPSA y realizamos entregas rápidas, seguras
+            y sin complicaciones. Haz tu pedido fácilmente por WhatsApp al
+            <strong>+34 650 459 701</strong>.
+          </p>
+          <a
+            href="https://wa.me/34650459701"
+            class="whatsapp-button"
+            target="_blank"
+          >
+            <i class="bi bi-whatsapp"></i> Pide por WhatsApp
+          </a>
+        </div>
+
+        <div class="features">
+          <div class="row">
+            <div class="col-lg-4 col-md-6">
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="bi bi-truck"></i>
+                </div>
+                <div>
+                  <h5 class="mb-1">Entrega rápida</h5>
+                  <p class="mb-0 text-muted">
+                    Entregas el mismo día en Santiago
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="bi bi-shield-check"></i>
+                </div>
+                <div>
+                  <h5 class="mb-1">Seguridad</h5>
+                  <p class="mb-0 text-muted">Botellas CEPSA homologadas</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="bi bi-geo-alt"></i>
+                </div>
+                <div>
+                  <h5 class="mb-1">Casco histórico</h5>
+                  <p class="mb-0 text-muted">Llegamos a toda la ciudad</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a
+      href="https://wa.me/34650459701"
+      class="whatsapp-floating"
+      target="_blank"
+    >
+      <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p class="mb-2">
+              Distribuidor autorizado de
+              <a href="https://www.gasabegondo.com" target="_blank"
+                >Gas Abegondo</a
+              >
+            </p>
+            <p class="mb-0">
+              Este sitio está gestionado por un repartidor local en Santiago de
+              Compostela.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
