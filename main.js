@@ -3,57 +3,23 @@ let currentLanguage = "gl";
 
 // Função para alternar idioma
 function cambiarIdioma(idioma) {
-  console.log("Cambiando idioma a:", idioma); // Debug
   currentLanguage = idioma;
 
-  // Primeiro reseta todas as seções expansíveis
-  resetSectionsForNewLanguage();
+  // Ocultar ambos conteúdos
+  document.getElementById("gl").style.display = "none";
+  document.getElementById("es").style.display = "none";
 
-  // Oculta ambos os conteúdos primeiro
-  const galicianContent = document.getElementById("gl");
-  const spanishContent = document.getElementById("es");
+  // Mostrar conteúdo selecionado
+  document.getElementById(currentLanguage).style.display = "block";
 
-  if (galicianContent) {
-    galicianContent.style.display = "none";
-    galicianContent.style.opacity = "0";
-    galicianContent.style.visibility = "hidden";
-  }
-
-  if (spanishContent) {
-    spanishContent.style.display = "none";
-    spanishContent.style.opacity = "0";
-    spanishContent.style.visibility = "hidden";
-  }
-
-  // Força um reflow
-  document.body.offsetHeight;
-
-  // Mostra o conteúdo do idioma selecionado
-  const selectedContent = document.getElementById(idioma);
-  if (selectedContent) {
-    console.log("Mostrando conteúdo para:", idioma); // Debug
-    selectedContent.style.display = "block";
-    selectedContent.style.visibility = "visible";
-    selectedContent.style.opacity = "1";
-
-    // Remove qualquer estilo inline que possa estar interferindo
-    selectedContent.removeAttribute("style");
-    selectedContent.style.display = "block";
-    selectedContent.style.opacity = "1";
-  }
-
-  // Atualiza o botão ativo
   document.querySelectorAll(".language-btn").forEach((btn) => {
     btn.classList.remove("active");
+    // Se o botão tem o data-lang igual ao idioma, ativa
+    if (btn.getAttribute("data-lang") === currentLanguage) {
+      btn.classList.add("active");
+      console.log(`Idioma atual: ${btn.getAttribute("data-lang")}`);
+    }
   });
-
-  const activeButton = document.querySelector(
-    `[onclick="cambiarIdioma('${idioma}')"]`
-  );
-  if (activeButton) {
-    activeButton.classList.add("active");
-    console.log("Botão ativo atualizado para:", idioma); // Debug
-  }
 }
 
 // Função para resetar seções ao mudar de idioma
@@ -218,30 +184,17 @@ function setupLightbox() {
 
 // Inicialização quando o DOM esté pronto
 document.addEventListener("DOMContentLoaded", function () {
-  // Define galego como idioma padrão
-  currentLanguage = "gl";
+  // Garantir que só o galego está visível inicialmente
+  document.getElementById("gl").style.display = "block";
+  document.getElementById("es").style.display = "none";
 
-  // Garante que apenas o conteúdo galego seja visível inicialmente
-  const galicianContent = document.getElementById("gl");
-  const spanishContent = document.getElementById("es");
-
-  if (galicianContent) {
-    galicianContent.style.display = "block";
-    galicianContent.style.opacity = "1";
-  }
-
-  if (spanishContent) {
-    spanishContent.style.display = "none";
-    spanishContent.style.opacity = "0";
-  }
-
-  // Marca o botão galego como ativo
-  const galicianButton = document.querySelector(
-    `[onclick="cambiarIdioma('gl')"]`
-  );
-  if (galicianButton) {
-    galicianButton.classList.add("active");
-  }
+  // Marcar botão galego como ativo usando data-lang
+  document.querySelectorAll(".language-btn").forEach((btn) => {
+    btn.classList.remove("active");
+    if (btn.getAttribute("data-lang") === "gl") {
+      btn.classList.add("active");
+    }
+  });
 
   resetSectionsForNewLanguage();
   setupLightbox(); // Configura el lightbox para las imágenes

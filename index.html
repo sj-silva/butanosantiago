@@ -34,10 +34,10 @@
         <div class="d-flex justify-content-between align-items-center w-100">
           <span class="navbar-brand text-white fw-bold">Gas Abegondo</span>
           <div class="language-buttons">
-            <button class="btn language-btn me-2" onclick="cambiarIdioma('gl')">
+            <button class="btn language-btn me-2" data-lang="gl" onclick="cambiarIdioma('gl')">
               Galego
             </button>
-            <button class="btn language-btn" onclick="cambiarIdioma('es')">
+            <button class="btn language-btn" data-lang="es" onclick="cambiarIdioma('es')">
               Castellano
             </button>
           </div>
@@ -57,7 +57,7 @@
         </div>
       </div>
       <!-- Galician Content -->
-      <div id="gl" style="display: block; opacity: 1">
+      <div id="gl" style="display: block;">
         <div class="hero-section text-center">
           <h1 class="hero-title">
             Gas butano e propano en Santiago de Compostela
@@ -233,7 +233,7 @@
   
   
       <!-- Spanish Content -->
-      <div id="es" style="display: none; opacity: 0">
+      <div id="es" style="display: none;">
         <div class="hero-section text-center">
           <h1 class="hero-title">
             Gas butano y propano en Santiago de Compostela
