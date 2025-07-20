@@ -1,51 +1,617 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
-  line-height: 1.6;
-  background: #fff;
-  color: #222;
+:root {
+  --primary-red: #e30613;
+  --whatsapp-green: #25d366;
+  --whatsapp-hover: #1ebe5b;
 }
+
+/* Estilos base */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Navegação */
+.navbar {
+  background: linear-gradient(135deg, var(--primary-red), #c5050f);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Botões de idioma */
+.language-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  transition: all 0.3s ease;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.375rem;
+}
+
+.language-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.language-btn.active {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--primary-red);
+  border-color: white;
+  font-weight: 500;
+}
+
+/* Logo */
 .logo {
   max-width: 100%;
   height: auto;
-  display: block;
-  margin: 0 auto 20px auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
-h1, h2 {
-  color: #e30613;
-  text-align: center;
+
+.logo:hover {
+  transform: scale(1.02);
 }
-p {
-  max-width: 800px;
-  margin: 0 auto 20px auto;
-  text-align: center;
+
+/* Seção hero */
+.hero-section {
+  background: linear-gradient(
+    135deg,
+    rgba(227, 6, 19, 0.05),
+    rgba(227, 6, 19, 0.1)
+  );
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
-footer {
-  text-align: center;
-  font-size: 0.9em;
-  color: #555;
-  margin-top: 40px;
+
+.hero-title {
+  color: var(--primary-red);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 2.2rem;
 }
-a {
-  color: #0077cc;
-  text-decoration: none;
+
+.hero-subtitle {
+  color: #495057;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
 }
-a:hover {
-  text-decoration: underline;
+
+.hero-description {
+  font-size: 1.1rem;
+  color: #6c757d;
+  line-height: 1.7;
+  margin-bottom: 2rem;
 }
+
+/* Botão WhatsApp */
 .whatsapp-button {
+  background: linear-gradient(
+    135deg,
+    var(--whatsapp-green),
+    var(--whatsapp-hover)
+  );
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.whatsapp-button:hover {
+  background: linear-gradient(135deg, var(--whatsapp-hover), #17a04a);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+  color: white;
+}
+
+.whatsapp-floating {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #25D366;
+  background: linear-gradient(
+    135deg,
+    var(--whatsapp-green),
+    var(--whatsapp-hover)
+  );
   color: white;
-  padding: 12px 16px;
-  border-radius: 50px;
-  font-weight: bold;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 1.5rem;
   text-decoration: none;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
   z-index: 1000;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
 }
-.whatsapp-button:hover {
-  background-color: #1ebe5b;
+
+.whatsapp-floating:hover {
+  background: linear-gradient(135deg, var(--whatsapp-hover), #17a04a);
+  transform: scale(1.1);
+}
+
+/* Seção de características */
+.features {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(227, 6, 19, 0.05);
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.feature-icon {
+  background: var(--primary-red);
+  color: white;
+  padding: 12px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 8px rgba(227, 6, 19, 0.3);
+}
+
+.toggle-icon {
+  float: right;
+  transition: transform 0.3s ease;
+}
+
+.toggle-icon.rotated {
+  transform: rotate(180deg);
+}
+
+/* Seções expansíveis */
+.products-section,
+.coverage-section {
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 2rem;
+  margin-top: 2rem;
+  animation: slideDown 0.3s ease-out;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+  color: var(--primary-red);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+/* Cartões de produtos - ATUALIZADO */
+.product-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagens dos produtos - ATUALIZADO */
+.product-image {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: zoom-in;
+}
+
+.product-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.loading-img {
+  background: #f3f3f3;
+  position: relative;
+  overflow: hidden;
+}
+
+.loading-img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+  animation: loading 1.5s infinite;
+}
+
+.product-info h6 {
+  color: var(--primary-red);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.product-info p {
+  color: #6c757d;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Mapa de cobertura */
+.coverage-map {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.map-container {
+  position: relative;
+  height: 400px;
+  margin: 0 auto;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.google-map {
+  border-radius: 15px;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.coverage-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background-color: rgba(227, 6, 19, 0.1);
+  border: 2px solid var(--primary-red);
+  z-index: 2;
+  pointer-events: none;
+  box-shadow: 0 0 20px rgba(227, 6, 19, 0.2);
+}
+
+/* Lightbox - ATUALIZADO */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  animation: fadeIn 0.3s;
+  user-select: none;
+  overflow: hidden;
+}
+
+.modal-content {
+  display: block;
+  max-width: 85%;
+  max-height: 85vh;
+  margin: 5vh auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: zoomIn 0.3s;
+}
+
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-arrow:hover {
+  color: var(--primary-red);
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prev {
+  left: 2rem;
+}
+
+.next {
+  right: 2rem;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.close {
+  position: absolute;
+  top: 2rem;
+  right: 2.5rem;
+  color: #f1f1f1;
+  font-size: 2.5rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.close:hover {
+  color: var(--primary-red);
+  transform: rotate(90deg) scale(1.1);
+}
+
+#caption {
+  text-align: center;
+  color: #fff;
+  padding: 1rem;
+  margin: 0 auto;
+  max-width: 80%;
+  font-size: 1.1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 4px;
+}
+
+.image-counter {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* Rodapé */
+.footer {
+  background: linear-gradient(135deg, #343a40, #495057);
+  color: white;
+  padding: 2rem 0;
+  margin-top: 3rem;
+}
+
+.footer a {
+  color: #ffc107;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .product-image {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 2rem 1rem;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .feature-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .feature-icon {
+    margin-bottom: 0.5rem;
+  }
+
+  .product-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .product-image {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 0.5rem;
+  }
+
+  .map-container {
+    height: 300px;
+  }
+
+  .coverage-circle {
+    width: 90%;
+    height: 90%;
+  }
+
+  .whatsapp-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+
+  /* Lightbox mobile */
+  .modal-content {
+    max-width: 95%;
+    max-height: 70vh;
+  }
+
+  .nav-arrow {
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    padding: 0.5rem;
+  }
+
+  .close {
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .language-btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .map-container {
+    height: 250px;
+  }
+
+  .product-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  #caption {
+    font-size: 0.9rem;
+    max-width: 90%;
+  }
+}
+
+/* Animações */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
