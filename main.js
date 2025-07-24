@@ -12,12 +12,14 @@ function cambiarIdioma(idioma) {
   // Mostrar conteúdo selecionado
   document.getElementById(currentLanguage).style.display = "block";
 
+  // Resetar seções internas
+  resetSectionsForNewLanguage();
+
   document.querySelectorAll(".language-btn").forEach((btn) => {
     btn.classList.remove("active");
     // Se o botão tem o data-lang igual ao idioma, ativa
     if (btn.getAttribute("data-lang") === currentLanguage) {
       btn.classList.add("active");
-      console.log(`Idioma atual: ${btn.getAttribute("data-lang")}`);
     }
   });
 }
