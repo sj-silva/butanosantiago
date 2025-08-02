@@ -1,6 +1,23 @@
 // Función para cambiar idioma
 let currentLanguage = "gl";
 
+
+function actualizarMetaTags(idioma) {
+  const metaDescription = document.querySelector('meta[name="description"]');
+  const ogTitle = document.querySelector('meta[property="og:title"]');
+  const ogDescription = document.querySelector('meta[property="og:description"]');
+
+  if (idioma === 'es') {
+    metaDescription.setAttribute("content", "Reparto de gas butano y propano en Santiago de Compostela. Entregas a domicilio rápidas, seguras y sin complicaciones. WhatsApp: +34 650 459 701");
+    ogTitle.setAttribute("content", "Gas Butano Santiago - Gas Abegondo");
+    ogDescription.setAttribute("content", "Reparto de gas butano y propano a domicilio en Santiago. Servicio rápido, directo por WhatsApp o llamada.");
+  } else if (idioma === 'gl') {
+    metaDescription.setAttribute("content", "Reparto de gas butano e propano en Santiago de Compostela. Entregas a domicilio rápidas e seguras. WhatsApp: +34 650 459 701");
+    ogTitle.setAttribute("content", "Gas Butano Santiago - Gas Abegondo");
+    ogDescription.setAttribute("content", "Reparto de gas butano e propano a domicilio en Santiago. Servizo rápido, directo por WhatsApp ou chamada.");
+  }
+}
+
 // Função para alternar idioma
 function cambiarIdioma(idioma) {
   currentLanguage = idioma;
@@ -22,6 +39,8 @@ function cambiarIdioma(idioma) {
       btn.classList.add("active");
     }
   });
+
+   actualizarMetaTags(idioma);
 }
 
 // Função para resetar seções ao mudar de idioma
@@ -187,6 +206,7 @@ function setupLightbox() {
 // Inicialização quando o DOM esté pronto
 document.addEventListener("DOMContentLoaded", function () {
   // Garantir que só o galego está visível inicialmente
+ 
   document.getElementById("gl").style.display = "block";
   document.getElementById("es").style.display = "none";
 
@@ -200,4 +220,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
   resetSectionsForNewLanguage();
   setupLightbox(); // Configura el lightbox para las imágenes
+  actualizarMetaTags("gl");
 });
