@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="gl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Calculadora de Bombonas Vendidas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./secondary.css" />
+  </head>
+  <body>
+    <div class="card">
+      <h1>Calculadora de Bombonas de Butanos Vendidas</h1>
+      <p>
+        Descubre cantas boombonas de <strong>17,27€</strong> e cantas bombonas
+        de <strong>19,27€</strong>
+        vendiches no día.
+      </p>
+
+      <label>Total de bombonas vendidas:</label>
+      <input id="totalVendidas" type="number" step="1" placeholder="Ex: 9" />
+
+      <label>Total recadado (€):</label>
+      <input
+        id="totalMontante"
+        type="number"
+        step="0.01"
+        placeholder="Ex: 165.43"
+      />
+
+      <button id="calcular">Calcular</button>
+
+      <div id="saida" class="resultado"></div>
+    </div>
+    <script src="./secondary.js"></script>
+  </body>
+</html>
