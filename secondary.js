@@ -49,6 +49,6 @@ document.getElementById("calcular").addEventListener("click", function () {
         Bombonas de 17,27 €: <b>${x.toFixed(0)}</b><br>
         Bombonas de 19,27 €: <b>${y.toFixed(0)}</b><br><br>
         <span style="font-size:0.9rem;color:#555;">
-          Verifica se o total e o importe son correctos.
+          Total e o importe son correctos.
         </span>`;
 });
