@@ -41,7 +41,7 @@ document.getElementById("calcular").addEventListener("click", function () {
 
   if (x < 0 || y < 0) {
     saida.innerHTML =
-      '<span class="erro">Os valores non son coherentes (resultado negativo).</span>';
+      '<span class="erro">Os valores non son coherentes.</span>';
     return;
   }
 
