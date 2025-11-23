@@ -6,8 +6,8 @@ document.getElementById("calcular").addEventListener("click", function () {
     document.getElementById("totalMontante").value
   );
 
-  const prezo1 = 17.27;
-  const prezo2 = 19.27;
+  const prezo1 = 16.46;
+  const prezo2 = 18.46;
 
   const saida = document.getElementById("saida");
 
@@ -19,7 +19,7 @@ document.getElementById("calcular").addEventListener("click", function () {
 
   // Sistema:
   // x + y = totalVendidas
-  // 17.27x + 19.27y = totalMontante
+  // 16.46x + 18.46y = totalMontante
 
   const a1 = 1,
     b1 = 1,
@@ -46,8 +46,8 @@ document.getElementById("calcular").addEventListener("click", function () {
   }
 
   saida.innerHTML = `<strong>Resultado:</strong><br>
-        Bombonas de 17,27 €: <b>${x.toFixed(0)}</b><br>
-        Bombonas de 19,27 €: <b>${y.toFixed(0)}</b><br><br>
+        Bombonas de 16,46 €: <b>${x.toFixed(0)}</b><br>
+        Bombonas de 18,46 €: <b>${y.toFixed(0)}</b><br><br>
         <span style="font-size:0.9rem;color:#555;">
           Total e o importe son correctos.
         </span>`;
